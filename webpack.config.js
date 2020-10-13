@@ -1,13 +1,13 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpackRules = require("./webpackRules");
 
 module.exports = {
     entry: "./src/index.js",
     devtool: "source-map",
     devServer: {
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
@@ -26,13 +26,14 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader","css-loader"]
             },
-            ...webpackRules,
+            {
+                test: /\.(js|ts)x?$/,
+                loader: "babel-loader",
+                exclude: /node_modules/,
+            },
         ],
-    },
-    devServer: {
-        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
