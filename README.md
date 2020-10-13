@@ -1,4 +1,12 @@
  webpack-cli  ^3.3.12  →  ^4.0.0
+ 
+ 
+ 
++ For webpack-cli 4.x:
++
++ "scripts": {
++  "start:dev": "webpack serve"
++}
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
