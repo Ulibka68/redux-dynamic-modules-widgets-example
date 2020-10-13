@@ -6,6 +6,9 @@ const webpackRules = require("./webpackRules");
 module.exports = {
     entry: "./src/index.js",
     devtool: "source-map",
+    devServer: {
+        hot: true
+    },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         alias: {
