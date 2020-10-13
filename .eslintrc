@@ -3,12 +3,10 @@
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
-    "plugin:jest/recommended"
+    "plugin:react/recommended"
   ],
   "plugins": [
-    "react-hooks",
-    "jest"
+    "react-hooks"
   ],
   "settings": {
     "react": {
@@ -16,13 +14,6 @@
     }
   },
   "rules": {
-    "jest/expect-expect": 0,
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
     "no-restricted-syntax": [
       "error",
       {
