@@ -6,7 +6,7 @@ import "../../widgets.css";
 const Link = ({ title, url }) => {
     return (
         <div className="news-link">
-            <a href={url}>{title}</a>
+            <a href={url} target="_blank">{title}</a>
         </div>
     );
 };

@@ -1,6 +1,25 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
+
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+console.log(isProd);
+
+const plugins = () => {
+    let base =[];
+    // return base;
+    base = [
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+        })
+    ];
+    if (isProd) {
+        base.push(new BundleAnalyzerPlugin())
+    }
+    return base;
+}
 
 module.exports = {
     entry: "./src/index.js",
@@ -35,9 +54,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "./public/index.html",
-        }),
-    ],
+    plugins: plugins(),
 };
