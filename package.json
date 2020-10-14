@@ -7,9 +7,11 @@
     "start": "env-cmd webpack serve",
     "cons": "env-cmd node envtest.js",
     "start2": "webpack serve --mode development --hot",
+    "start3": "работает только в lunix  webpack serve --mode development --hot --define process.env.NODE_ENV=\"'development'\"",
     "start_old": "npx webpack-dev-server --mode development --hot",
-    "build": "npx webpack --mode production",
-    "test": "npx jest"
+    "build": "npx webpack -p ",
+    "test": "npx jest",
+    "stats":"npx webpack --mode production --profile --json > stats.json"
   },
   "repository": {
     "type": "git",

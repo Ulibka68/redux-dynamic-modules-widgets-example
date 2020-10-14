@@ -1,5 +1,7 @@
- webpack-cli  ^3.3.12  →  ^4.0.0
- 
+Оригинальный репозиторий:
+
+https://github.com/microsoft/redux-dynamic-modules/tree/master/packages/widgets-example
+
  Список обслуживаемых файлов:
  http://localhost:8080/webpack-dev-server
  

@@ -6,6 +6,8 @@ const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log(isProd);
+console.log(process.env.NODE_ENV);
+// console.log(process.env);
 
 const plugins = () => {
     let base =[];
@@ -13,6 +15,7 @@ const plugins = () => {
     base = [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
+            favicon:"./public/favicon.ico"
         })
     ];
     if (isProd) {
