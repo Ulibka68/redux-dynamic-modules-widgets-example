@@ -9,9 +9,9 @@
     "start2": "webpack serve --mode development --hot",
     "start3": "работает только в lunix  webpack serve --mode development --hot --define process.env.NODE_ENV=\"'development'\"",
     "start_old": "npx webpack-dev-server --mode development --hot",
-    "build": "npx webpack -p ",
+    "build": "npx webpack --mode production ",
     "test": "npx jest",
-    "stats":"npx webpack --mode production --profile --json > stats.json"
+    "stats": "npx webpack --mode production --profile --json > stats.json"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
     "prettier": "^2.1.2",
     "react-docgen-typescript-loader": "^3.7.2",

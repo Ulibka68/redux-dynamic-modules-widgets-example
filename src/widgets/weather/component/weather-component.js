@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import "./weather-component.css";
 import "../../widgets.css";
+import Tiger from "@/assets/img/tiger.jpg";
 
 const Weather = ({ loading, name, temperature, description }) => {
     if (loading) {
@@ -13,6 +14,7 @@ const Weather = ({ loading, name, temperature, description }) => {
             <h2>{name}</h2>
             <div>{description}</div>
             <div>{temperature} °C</div>
+            <img src={Tiger} style={{width:200}}/>
         </div>
     );
 };
