@@ -29,7 +29,12 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         hot: true,
-        historyApiFallback: true,
+        historyApiFallback: {
+            rewrites: [
+                {from: './public/favicon.ico', to: 'favicon.ico'},
+                {from: './public/manifest.json', to: 'manifest.json'}
+            ]
+        }
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
