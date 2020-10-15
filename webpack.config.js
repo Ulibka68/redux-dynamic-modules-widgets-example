@@ -29,12 +29,9 @@ module.exports = {
     devtool: "source-map",
     devServer: {
         hot: true,
-        historyApiFallback: {
-            rewrites: [
-                {from: './public/favicon.ico', to: 'favicon.ico'},
-                {from: './public/manifest.json', to: 'manifest.json'}
-            ]
-        }
+        contentBase: path.join(__dirname, 'src/assets'),
+        contentBasePublicPath: '/',
+        historyApiFallback: true
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
@@ -45,9 +42,15 @@ module.exports = {
         },
     },
     output: {
+        // `path` is the folder where Webpack will place your bundles
         path: path.join(__dirname, "/dist"),
-        filename: "./index.js",
-        publicPath: "/",
+        // `filename` provides a template for naming your bundles (remember to use `[name]`)
+        filename: '[name].bundle.js',
+        // filename: "./index.js",
+        // `chunkFilename` provides a template for naming code-split bundles (optional)
+        chunkFilename: '[name].bundle.js',
+        // `publicPath` is where Webpack will load your bundles from (optional)
+        publicPath: '/'
     },
     module: {
         rules: [
